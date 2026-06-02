@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>捷达云递 | 快递物流查询</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="捷达云递首页">
+        <span class="brand-mark" aria-hidden="true">J</span>
+        <span>捷达云递</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#track">查件</a>
+        <a href="#timeline">物流轨迹</a>
+        <a href="#service">服务能力</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="track">
+        <img class="hero-bg" src="assets/hero-logistics.png" alt="现代物流园区、配送车辆和路线网络" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <section class="query-panel" aria-labelledby="query-title">
+            <p class="eyebrow">Express Tracking</p>
+            <h1 id="query-title">快递物流查询</h1>
+            <p class="intro">输入运单号，查看当前节点、预计送达时间和全链路轨迹。</p>
+            <form class="track-form" id="trackForm">
+              <label for="trackingNo">运单号</label>
+              <div class="input-row">
+                <input id="trackingNo" name="trackingNo" value="JD202606020876" autocomplete="off" />
+                <button type="submit" aria-label="查询运单">
+                  <span aria-hidden="true">⌕</span>
+                  查询
+                </button>
+              </div>
+            </form>
+            <div class="quick-tags" aria-label="示例运单">
+              <button type="button" data-code="JD202606020876">同城急送</button>
+              <button type="button" data-code="KD8839012457">跨省标快</button>
+              <button type="button" data-code="CN7654309288">冷链专送</button>
+            </div>
+          </section>
+
+          <aside class="status-card" aria-label="当前物流状态">
+            <div class="status-head">
+              <span class="status-dot"></span>
+              <span id="statusLabel">运输中</span>
+            </div>
+            <p class="status-title" id="statusTitle">包裹已到达上海分拨中心</p>
+            <dl class="status-grid">
+              <div>
+                <dt>预计送达</dt>
+                <dd id="eta">明日 18:00 前</dd>
+              </div>
+              <div>
+                <dt>承运服务</dt>
+                <dd id="serviceName">同城急送</dd>
+              </div>
+              <div>
+                <dt>当前位置</dt>
+                <dd id="location">上海分拨中心</dd>
+              </div>
+              <div>
+                <dt>派送进度</dt>
+                <dd id="progressText">65%</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="tracking-workspace">
+        <div class="route-panel">
+          <div class="section-head">
+            <p class="eyebrow">Route</p>
+            <h2>运输进度</h2>
+          </div>
+          <div class="route-line" aria-label="运输阶段进度">
+            <div class="route-fill" id="routeFill"></div>
+            <div class="route-step done">
+              <span>收</span>
+              <strong>已揽收</strong>
+            </div>
+            <div class="route-step done">
+              <span>转</span>
+              <strong>转运中</strong>
+            </div>
+            <div class="route-step active" id="activeStep">
+              <span>分</span>
+              <strong>分拨处理</strong>
+            </div>
+            <div class="route-step">
+              <span>派</span>
+              <strong>派送中</strong>
+            </div>
+            <div class="route-step">
+              <span>签</span>
+              <strong>已签收</strong>
+            </div>
+          </div>
+        </div>
+
+        <section class="timeline-panel" id="timeline" aria-labelledby="timeline-title">
+          <div class="section-head">
+            <p class="eyebrow">Timeline</p>
+            <h2 id="timeline-title">物流轨迹</h2>
+          </div>
+          <ol class="timeline" id="timelineList"></ol>
+        </section>
+
+        <aside class="parcel-card">
+          <img src="assets/parcel-scan.png" alt="包裹扫码和物流路径示意图" />
+          <div class="parcel-copy">
+            <p class="eyebrow">Parcel</p>
+            <h2>包裹信息</h2>
+            <dl>
+              <div>
+                <dt>重量</dt>
+                <dd id="weight">2.4 kg</dd>
+              </div>
+              <div>
+                <dt>温控</dt>
+                <dd id="temperature">常温</dd>
+              </div>
+              <div>
+                <dt>保价</dt>
+                <dd id="insurance">¥2,000</dd>
+              </div>
+            </dl>
+          </div>
+        </aside>
+      </section>
+
+      <section class="service-strip" id="service" aria-label="服务能力">
+        <div>
+          <strong>98.7%</strong>
+          <span>准时送达率</span>
+        </div>
+        <div>
+          <strong>12 分钟</strong>
+          <span>轨迹更新间隔</span>
+        </div>
+        <div>
+          <strong>286 城</strong>
+          <span>直营网点覆盖</span>
+        </div>
+        <div>
+          <strong>24h</strong>
+          <span>异常件响应</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
